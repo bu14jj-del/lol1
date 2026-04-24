@@ -36,11 +36,11 @@ jobs:
       
       - name: Build APK
         run: |
-          sudo apt-get update && sudo apt-get install -y autoconf automake libtool
+          sudo apt-get update && sudo apt-get install -y autoconf automake libtool pkg-config libncurses5-dev
           echo "y" | buildozer android debug
         env:
           BUILDOZER_ANDROID_API: 33
-          BUILDOZER_ANDROID_NDK_VERSION: 27
+          BUILDOZER_ANDROID_NDK_VERSION: 25b
       
       - name: Upload APK
         uses: actions/upload-artifact@v4
